@@ -113,6 +113,119 @@ Add to your Claude Code MCP settings (`.claude/settings.json` or project-level):
 }
 ```
 
+### Cursor
+
+Add to your Cursor MCP configuration file:
+
+- **Global**: `~/.cursor/mcp.json`
+- **Project-level**: `.cursor/mcp.json`
+
+```json
+{
+  "mcpServers": {
+    "mcp-devdiary": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/JaehaSS/mcp-devdiary.git", "mcp-devdiary"],
+      "env": {
+        "GITHUB_TOKEN": "ghp_your_token_here",
+        "GITHUB_USERNAME": "your-username"
+      }
+    }
+  }
+}
+```
+
+Or go to **Cursor Settings → Tools & Integrations → New MCP Server** and add the command manually.
+
+### Windsurf
+
+Add to your Windsurf MCP configuration file:
+
+- **macOS/Linux**: `~/.codeium/windsurf/mcp_config.json`
+- **Windows**: `%USERPROFILE%\.codeium\windsurf\mcp_config.json`
+
+```json
+{
+  "mcpServers": {
+    "mcp-devdiary": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/JaehaSS/mcp-devdiary.git", "mcp-devdiary"],
+      "env": {
+        "GITHUB_TOKEN": "ghp_your_token_here",
+        "GITHUB_USERNAME": "your-username"
+      }
+    }
+  }
+}
+```
+
+### VS Code (GitHub Copilot)
+
+Create or edit `.vscode/mcp.json` in your workspace root:
+
+```json
+{
+  "servers": {
+    "mcp-devdiary": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/JaehaSS/mcp-devdiary.git", "mcp-devdiary"],
+      "env": {
+        "GITHUB_TOKEN": "ghp_your_token_here",
+        "GITHUB_USERNAME": "your-username"
+      }
+    }
+  }
+}
+```
+
+Or use the command palette: **MCP: Open User Configuration** to add the server globally.
+
+### Antigravity (Google)
+
+Add to your Antigravity MCP configuration file:
+
+- **macOS/Linux**: `~/.gemini/antigravity/mcp_config.json`
+- **Windows**: `%USERPROFILE%\.gemini\antigravity\mcp_config.json`
+
+```json
+{
+  "mcpServers": {
+    "mcp-devdiary": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/JaehaSS/mcp-devdiary.git", "mcp-devdiary"],
+      "env": {
+        "GITHUB_TOKEN": "ghp_your_token_here",
+        "GITHUB_USERNAME": "your-username"
+      }
+    }
+  }
+}
+```
+
+Or open the **Agent Panel → "…" dropdown → MCP Servers → Manage MCP Servers → View raw config** to edit directly.
+
+### Zed
+
+Add to your Zed settings (`zed: open settings`):
+
+```json
+{
+  "context_servers": {
+    "mcp-devdiary": {
+      "source": "custom",
+      "command": {
+        "path": "uvx",
+        "args": ["--from", "git+https://github.com/JaehaSS/mcp-devdiary.git", "mcp-devdiary"],
+        "env": {
+          "GITHUB_TOKEN": "ghp_your_token_here",
+          "GITHUB_USERNAME": "your-username"
+        }
+      }
+    }
+  }
+}
+```
+
 ## Usage Examples
 
 Once connected, you can ask Claude:

@@ -113,6 +113,119 @@ Claude Code MCP 설정 (`.claude/settings.json` 또는 프로젝트 레벨)에 �
 }
 ```
 
+### Cursor
+
+Cursor MCP 설정 파일에 추가:
+
+- **글로벌**: `~/.cursor/mcp.json`
+- **프로젝트**: `.cursor/mcp.json`
+
+```json
+{
+  "mcpServers": {
+    "mcp-devdiary": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/JaehaSS/mcp-devdiary.git", "mcp-devdiary"],
+      "env": {
+        "GITHUB_TOKEN": "ghp_여기에_토큰_입력",
+        "GITHUB_USERNAME": "사용자명"
+      }
+    }
+  }
+}
+```
+
+또는 **Cursor Settings → Tools & Integrations → New MCP Server**에서 직접 추가할 수 있습니다.
+
+### Windsurf
+
+Windsurf MCP 설정 파일에 추가:
+
+- **macOS/Linux**: `~/.codeium/windsurf/mcp_config.json`
+- **Windows**: `%USERPROFILE%\.codeium\windsurf\mcp_config.json`
+
+```json
+{
+  "mcpServers": {
+    "mcp-devdiary": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/JaehaSS/mcp-devdiary.git", "mcp-devdiary"],
+      "env": {
+        "GITHUB_TOKEN": "ghp_여기에_토큰_입력",
+        "GITHUB_USERNAME": "사용자명"
+      }
+    }
+  }
+}
+```
+
+### VS Code (GitHub Copilot)
+
+워크스페이스 루트에 `.vscode/mcp.json` 파일을 생성하거나 수정:
+
+```json
+{
+  "servers": {
+    "mcp-devdiary": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/JaehaSS/mcp-devdiary.git", "mcp-devdiary"],
+      "env": {
+        "GITHUB_TOKEN": "ghp_여기에_토큰_입력",
+        "GITHUB_USERNAME": "사용자명"
+      }
+    }
+  }
+}
+```
+
+또는 명령 팔레트에서 **MCP: Open User Configuration**을 사용하여 글로벌 설정에 추가할 수 있습니다.
+
+### Antigravity (Google)
+
+Antigravity MCP 설정 파일에 추가:
+
+- **macOS/Linux**: `~/.gemini/antigravity/mcp_config.json`
+- **Windows**: `%USERPROFILE%\.gemini\antigravity\mcp_config.json`
+
+```json
+{
+  "mcpServers": {
+    "mcp-devdiary": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/JaehaSS/mcp-devdiary.git", "mcp-devdiary"],
+      "env": {
+        "GITHUB_TOKEN": "ghp_여기에_토큰_입력",
+        "GITHUB_USERNAME": "사용자명"
+      }
+    }
+  }
+}
+```
+
+또는 **Agent Panel → "…" 드롭다운 → MCP Servers → Manage MCP Servers → View raw config**에서 직접 수정할 수 있습니다.
+
+### Zed
+
+Zed 설정 파일에 추가 (`zed: open settings`):
+
+```json
+{
+  "context_servers": {
+    "mcp-devdiary": {
+      "source": "custom",
+      "command": {
+        "path": "uvx",
+        "args": ["--from", "git+https://github.com/JaehaSS/mcp-devdiary.git", "mcp-devdiary"],
+        "env": {
+          "GITHUB_TOKEN": "ghp_여기에_토큰_입력",
+          "GITHUB_USERNAME": "사용자명"
+        }
+      }
+    }
+  }
+}
+```
+
 ## 사용 예시
 
 연결 후 Claude에게 이렇게 물어보세요:
